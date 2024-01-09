@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes[0]:
+        id: example-service
+        uri: http://localhost:8081
+        predicates[0]: Path=/example/**
+  application:
+    name: api-gateway
+server:
+  port: '8080'
