@@ -28,3 +28,43 @@ Start your Spring Boot application. This will launch the API Gateway on port 808
 Testing:
 You can now send requests to the API Gateway. For example, if you have a service running on http://localhost:8081/example/resource, you can access it through the API Gateway at http://localhost:8080/example/resource.
 
+## Running the API Gateway with Docker Compose
+
+To simplify the deployment of the API Gateway and related services, you can use Docker Compose. Follow these steps to start the API Gateway using `docker-compose`:
+
+### Prerequisites
+
+Before you begin, ensure that you have [Docker](https://www.docker.com/get-started) and [Docker Compose](https://docs.docker.com/compose/install/) installed on your system.
+
+### Starting the API Gateway
+
+1. Navigate to the `compose` directory of your project:
+
+   ```shell
+   cd compose
+   ```
+
+2. Open the `docker-compose.yml` file in a text editor and ensure that it defines the services and configurations required for your API Gateway. Make any necessary adjustments based on your specific project requirements.
+
+3. Run the following command to start the API Gateway and associated services in detached mode with the project name "houses96-api-gateway":
+
+   ```shell
+   docker-compose -p houses96-api-gateway up -d
+   ```
+
+   This command will create and start Docker containers for the API Gateway and any linked microservices defined in the `docker-compose.yml` file.
+
+4. The API Gateway and related services will start, and you can monitor their status by running:
+
+   ```shell
+   docker-compose -p houses96-api-gateway ps
+   ```
+
+   This command will display the status of the running containers.
+
+### Testing the API Gateway
+
+You can now test the API Gateway by sending requests to it. For example, if you have a service running on http://localhost:8081/example/resource, you can access it through the API Gateway at http://localhost:8080/example/resource.
+
+Feel free to customize the steps and instructions to match the specifics of your project and Docker Compose configuration. Using Docker Compose simplifies the management of your API Gateway and related services, making it easier to deploy and test in a controlled environment.
+
